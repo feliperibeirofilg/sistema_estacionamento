@@ -33,4 +33,5 @@ class EmpresaController extends Controller
     public function visualizarCadastro(){
         Empresa::all();
     }
+    
 }
