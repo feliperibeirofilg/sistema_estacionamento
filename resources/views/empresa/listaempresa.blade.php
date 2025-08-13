@@ -19,7 +19,9 @@
                 <td>{{ $empresa->CNPJ}}</td>
                 <td>{{ $empresa->qtde_motos}}</td>
                 <td>{{ $empresa->qtde_carros}}</td>
-                <td>Ações</td>
+                <td>
+                    <a href="{{ route('formCadVeiculo', ['id' => $empresa->id]) }}">Cadastrar Veículo</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

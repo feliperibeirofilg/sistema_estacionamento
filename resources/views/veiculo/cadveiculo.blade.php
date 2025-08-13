@@ -3,7 +3,7 @@
 
 
 <div>
-    <form action="#" method="post">
+    <form action="{{route('cadastroVeiculo')}}" method="post">
 
     <label for="ds_veiculo">
         <input type="text" name="ds_veiculo" placeholder="Modelo do carro" required>
@@ -17,9 +17,7 @@
             <option value="carro">Carro</option>
         </select>
     </label>
-
     
-
     <button type="submit">Salvar</button>
 
     </form>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Models\Empresa;
+use App\Models\Veiculo;
 
 class VeiculoController extends Controller
 {
@@ -14,7 +17,7 @@ class VeiculoController extends Controller
         $request->validate ([
             'ds_veiculo' => 'required|string|max:50',
             'modelo_veiculo' => 'required|string',
-            'tipo_veiculo' = > 'required|enum'
+            'tipo_veiculo' => ['required', Rule::in(['carro', 'moto'])],
         ]);
 
         Veiculo::create([
