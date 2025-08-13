@@ -7,18 +7,20 @@
         <thead>
             <th>Nome Empresa</th>
             <th>CNPJ</th>
-            <th>Qtde Motos</th>
-            <th>Qtde Carros</th>
+            <th>Vagas Motos</th>
+            <th>Vagas Carros</th>
             <th>Ações</th>
         </thead>
 
         <tbody>
-            @foreach(empresas as empresa)
-                <td>{{empresa->ds_empresa}}</td>
-                <td>{{empresa->CNPJ}}</td>
-                <td>{{empresa->qtde_motos}}</td>
-                <td>{{empresa->qtde_carros}}</td>
+            @foreach($empresas as $empresa)
+            <tr>
+                <td>{{ $empresa->ds_empresa}}</td>
+                <td>{{ $empresa->CNPJ}}</td>
+                <td>{{ $empresa->qtde_motos}}</td>
+                <td>{{ $empresa->qtde_carros}}</td>
                 <td>Ações</td>
+            </tr>
             @endforeach
         </tbody>
     </table>

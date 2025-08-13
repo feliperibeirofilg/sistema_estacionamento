@@ -27,11 +27,15 @@ class EmpresaController extends Controller
             'qtde_carros' =>$request->qtde_carros,
         ]);
 
-        return view('welcome');
+        return redirect()->route('listaEmpresas');
     }
 
     public function visualizarCadastro(){
-        Empresa::all();
+        $empresas = Empresa::all();
+
+        return view('empresa.listaempresa', compact ('empresas'));
     }
+
+
     
 }

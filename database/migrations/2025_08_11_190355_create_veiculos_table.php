@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ds_veiculo');
             $table->string('modelo_veiculo');
             $table->enum('tipo_veiculo',['carro', 'moto']);
-            $table->foreignId('empresa_id')->constrained('empresa')->onDelete('cascade');
+            $table->foreignId('empresa_id')->constrained('empresas')->onDelete('cascade');
             $table->timestamps();
         });
     }
