@@ -16,5 +16,7 @@ Route::post('/empresa/cadempresa', [EmpresaController::class, 'cadEmpresa'])->na
 
 Route::get('/empresa/listaempresa', [EmpresaController::class, 'visualizarCadastro'])->name('listaEmpresas');
 
-Route::get('/veiculo/cadveiculo/{id}', [VeiculoController::class, 'formCadastroVeiculo'])->name('formCadVeiculo');
-Route::post('/veiculo/cadveiculo/{id}', [VeiculoController::class, 'cadVeiculo'])->name('cadastroVeiculo');
+Route::get('/veiculo/cadveiculo/{empresa}', [VeiculoController::class, 'formCadadastroVeiculo'])->name('formCadVeiculo');
+Route::post('/veiculo/cadveiculo/{empresa}', [VeiculoController::class, 'cadVeiculo'])->name('cadastroVeiculo');
+
+Route::get('/empresa/detalheempresa/{empresa}', [EmpresaController::class, 'detalheEmpresa'])->name('showEmpresa');

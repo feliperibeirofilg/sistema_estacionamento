@@ -10,9 +10,11 @@ class Veiculo extends Model
         'ds_veiculo',
         'modelo_veiculo',
         'tipo_veiculo'
-    ]
+    ];
 
     public function empresa(){
         return $this->hasMany(Empresa::class);
     }
+
+    
 }

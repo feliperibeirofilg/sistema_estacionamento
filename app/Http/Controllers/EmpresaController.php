@@ -36,6 +36,10 @@ class EmpresaController extends Controller
         return view('empresa.listaempresa', compact ('empresas'));
     }
 
+    public function detalheEmpresa(Empresa $empresa){
+        return view ('empresa.detalheempresa', ['empresa' => $empresa]);
+    }
+
 
     
 }

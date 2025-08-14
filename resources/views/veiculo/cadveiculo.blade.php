@@ -3,10 +3,11 @@
 
 
 <div>
-    <form action="{{route('cadastroVeiculo')}}" method="post">
 
+    <form action="{{ route('cadastroVeiculo', $empresa->id) }}" method="post">
+    @csrf
     <label for="ds_veiculo">
-        <input type="text" name="ds_veiculo" placeholder="Modelo do carro" required>
+        <input type="text" name="ds_veiculo" placeholder="Marca do carro" required>
     </label>
     <label for="modelo_veiculo">
         <input type="text" name="modelo_veiculo" placeholder="Modelo do carro" required>
