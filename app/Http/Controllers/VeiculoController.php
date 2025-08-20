@@ -29,6 +29,5 @@ class VeiculoController extends Controller
         
         return redirect()->route('showEmpresa', ['empresa' => $empresa])
         ->with('success', 'Veículo adicionado com sucesso!');
-        
     }
 }

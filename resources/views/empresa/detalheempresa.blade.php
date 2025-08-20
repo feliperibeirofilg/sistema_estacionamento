@@ -9,6 +9,7 @@
         <th>CNPJ</th>
         <th>Vagas Motos</th>
         <th>Vagas Carros</th>
+        <th>Ações</th>
     </thead>
 
     <tbody>
@@ -19,6 +20,16 @@
         </td>
         <td>{{ $empresa->veiculosCarro()->count() }} / {{$empresa->qtde_motos}}
             ( Restam: {{ $empresa->vagasCarrosRestantes() }} )
+        </td>
+        <td>
+            <form action="{{ route('deletarVeiculo', $veiculo) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-link text-danger p-0" onclick="return confirm('Tem certeza que deseja excluir esse carro?')" title="Excluir">
+                     <i class="bi bi-trash-fill"></i>
+                </button>
+
+            </form>
         </td>
     </tbody>
 </table>

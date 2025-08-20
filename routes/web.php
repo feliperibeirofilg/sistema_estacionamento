@@ -20,3 +20,5 @@ Route::get('/veiculo/cadveiculo/{empresa}', [VeiculoController::class, 'formCada
 Route::post('/veiculo/cadveiculo/{empresa}', [VeiculoController::class, 'cadVeiculo'])->name('cadastroVeiculo');
 
 Route::get('/empresa/detalheempresa/{empresa}', [EmpresaController::class, 'detalheEmpresa'])->name('showEmpresa');
+
+Route::delete('/empresa/detalheempresa/{empresa}', [EmpresaController::class, 'excluirVeiculo'])->name('deletarVeiculo');
