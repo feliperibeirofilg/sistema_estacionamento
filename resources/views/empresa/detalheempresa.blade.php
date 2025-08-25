@@ -13,6 +13,7 @@
     </thead>
 
     <tbody>
+        @foreach($empresa->veiculos as $veiculo)
         <td>{{ $empresa->ds_empresa }}</td>
         <td>{{ $empresa->CNPJ }}</td>
         <td>{{ $empresa->veiculosMoto()->count() }} / {{ $empresa->qtde_motos }}
@@ -28,9 +29,9 @@
                 <button class="btn btn-link text-danger p-0" onclick="return confirm('Tem certeza que deseja excluir esse carro?')" title="Excluir">
                      <i class="bi bi-trash-fill"></i>
                 </button>
-
             </form>
         </td>
+        @endforeach
     </tbody>
 </table>
 

@@ -13,7 +13,7 @@ class Empresa extends Model
         'qtde_carros'
     ];
 
-    public function veiculo(){
+    public function veiculos(){
         return $this->hasMany(Veiculo::class);
     }
 

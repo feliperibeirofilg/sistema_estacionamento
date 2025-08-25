@@ -30,4 +30,12 @@ class VeiculoController extends Controller
         return redirect()->route('showEmpresa', ['empresa' => $empresa])
         ->with('success', 'Veículo adicionado com sucesso!');
     }
+
+    public function destroy(Veiculo $veiculo){
+
+        // dd($veiculo);
+        $empresaId = $veiculo->empresa_id;
+        $veiculo->delete();
+        return redirect()->route('showEmpresa', $empresaId)->with('success', 'Veículo excluído com sucesso!');
+    }
 }

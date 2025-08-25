@@ -21,4 +21,4 @@ Route::post('/veiculo/cadveiculo/{empresa}', [VeiculoController::class, 'cadVeic
 
 Route::get('/empresa/detalheempresa/{empresa}', [EmpresaController::class, 'detalheEmpresa'])->name('showEmpresa');
 
-Route::delete('/empresa/detalheempresa/{empresa}', [EmpresaController::class, 'excluirVeiculo'])->name('deletarVeiculo');
+Route::delete('/empresa/detalheempresa/{veiculo}', [VeiculoController::class, 'destroy'])->name('deletarVeiculo');

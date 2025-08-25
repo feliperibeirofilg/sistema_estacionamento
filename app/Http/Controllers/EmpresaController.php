@@ -37,21 +37,11 @@ class EmpresaController extends Controller
     }
 
     public function detalheEmpresa(Empresa $empresa){
+
+        $empresa->load('veiculos');
+
         return view ('empresa.detalheempresa', ['empresa' => $empresa]);
     }
 
-    public function destroy(Veiculo $veiculo)
-{
-    // 1. Antes de apagar, pegamos o ID da empresa para sabermos para onde redirecionar.
-    $empresaId = $veiculo->empresa_id;
-
-    // 2. O Laravel já encontrou o veículo correto através da rota.
-    // Agora, simplesmente chamamos o método delete() nele.
-    $veiculo->delete();
-
-    // 3. Redirecionamos de volta para a página de detalhes da empresa,
-    // passando o ID que guardamos e uma mensagem de sucesso.
-    return redirect()->route('showEmpresa', $empresaId)
-                     ->with('success', 'Veículo excluído com sucesso!');
-}
+    
 }
